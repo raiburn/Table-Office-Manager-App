@@ -10,7 +10,7 @@ const jwt = require('jsonwebtoken');
 const authController = require('../controllers/Users');
 
 
-mongoose.connect('mongodb://localhost:27017/blog', {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true,useFindAndModify:false});
+mongoose.connect('mongodb://localhost:27017/TOMA', {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true,useFindAndModify:false});
 
 
 app.use(bodyParser.urlencoded({ extended:false}));
