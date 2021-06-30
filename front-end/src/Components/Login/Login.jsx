@@ -49,7 +49,7 @@ const Login = () => {
                     <div id="formContent">
 
                         <div className="fadeIn first">
-                            <img src="" id="icon" alt="User Icon" />
+                            
                         </div>
 
                     

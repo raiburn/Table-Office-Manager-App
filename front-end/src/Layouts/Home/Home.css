@@ -1,0 +1,42 @@
+.Home {
+    border: 1px solid greenyellow;
+    display: flex;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.lane {
+    max-width: 100%;
+    height: 600px;
+    margin: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid violet;
+}
+
+.container-left {
+    display: flex;
+    border: 1px solid blue;
+}
+
+.container-right {
+    display: flex;
+    border: 1px solid red;
+}
+
+.container-right .table {
+    transform-origin: top left;
+    transform: rotate(90deg) scaleY(-1);
+    border: 1px solid red;
+    top: 0;
+}
+
+
+/* 
+* {
+    box-sizing: border-box;
+} */

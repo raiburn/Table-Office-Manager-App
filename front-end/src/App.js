@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import Login from "./Components/Login/Login";
+import Home from "./Layouts/Home/Home"
 import Register from "./Components/Login/Register/Register";
 
 import {
@@ -19,10 +20,11 @@ function App() {
         </Route>
         <Route exact path='/registrarse' component={Register}>
         </Route>
+        <Route exact path='/main' component={Home}>
+        </Route>
     </Switch>
   </Router>
         );
 }
 
 export default App;
-
