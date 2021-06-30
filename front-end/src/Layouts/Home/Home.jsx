@@ -1,14 +1,16 @@
 import './Home.css';
 import Table from "../../Components/Home/Table"
+import Office from "../../Components/Home/Office"
 
 const Home = () => {
 
   return <div className="Home">
     <div className="container">
 
-      {/* <div className="lane">
-
-      </div> */}
+      <div className="lane">
+        <Office></Office>
+        <Office></Office>
+      </div>
 
       <div className="lane">
 
