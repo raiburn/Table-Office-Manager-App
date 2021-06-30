@@ -3,6 +3,9 @@ import './Login.css';
 import Auth from '../../services/Auth';
 import  { Redirect, useHistory}  from "react-router-dom";
 import isAuthenticated from "../../services/IsAuthenticated";
+import logo from "./logo.png"
+// import abel from "./abel.ttf"
+
 
 const Login = () => {
     let auth = isAuthenticated();
@@ -45,18 +48,21 @@ const Login = () => {
     
     if(auth === false){
         return (
+            
                 <div className="wrapper fadeInDown">
+
+                    <div className = "header"><h3>Welcome to Table Office Manager</h3></div>
                     <div id="formContent">
 
                         <div className="fadeIn first">
-                            <img src="" id="icon" alt="User Icon" />
+                            <img src={logo} className="w3-round" alt="User Icon" />
                         </div>
 
                     
                         <form onSubmit={onSubmit}>
-                            <input type="text" className="fadeIn second" id="username" placeholder="user"
+                            <input type="text" className="fadeIn second" id="username" placeholder="User"
                              onChange={onChange} value={data.username}/>
-                            <input type="password" className="fadeIn third" id="password" placeholder="password"
+                            <input type="password" className="fadeIn third" id="password" placeholder="Password"
                              onChange={onChange} value={data.password}/>
                             <input type="submit" className="fadeIn fourth" value="Log In" />
                         </form>
@@ -64,7 +70,7 @@ const Login = () => {
                         <div id="formFooter">
                             <a className="underlineHover" href="http://localhost:3000/registrarse">Registrarse</a>
                             <br></br>
-                            <a className="underlineHover" href="#">Olvido la contraseña?</a>
+                            <a className="underlineHover" href="#">¿Olvidó la contraseña?</a>
                         </div>
 
                     </div>
