@@ -30,3 +30,4 @@ module.exports = (app, next) => register(app, [
   reservations,
   root,
 ], next);
+
