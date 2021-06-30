@@ -6,11 +6,6 @@ const usuarioSchema = new Schema({
         unique: true,
         trim: true
     },
-    username:{
-        type: String,
-        unique: true,
-        trim: true,
-    },
     name:{
         type: String,
         unique: false,
@@ -21,10 +16,6 @@ const usuarioSchema = new Schema({
         required: true,
         unique: false,
         trim: false
-    },
-    phonenumber:{
-        type: String,
-        unique:false
     }
 });
 

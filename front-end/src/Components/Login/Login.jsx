@@ -53,11 +53,9 @@ const Login = () => {
 
                     <div className = "header"><h3>Welcome to Table Office Manager</h3></div>
                     <div id="formContent">
-
                         <div className="fadeIn first">
                             <img src={logo} className="w3-round" alt="User Icon" />
                         </div>
-
                     
                         <form onSubmit={onSubmit}>
                             <input type="text" className="fadeIn second" id="username" placeholder="User"
