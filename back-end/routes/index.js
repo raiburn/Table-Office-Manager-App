@@ -1,9 +1,32 @@
-const auth = require('./Users/Auth');
-const createuser = require('./Users/CreateUser');
-const users = require('./Users/Users');
-const finduser = require('./Users/FindUser');
-const deleteuser = require('./Users/DeleteUser');
-const alteruser = require('./Users/AlterUser');
 
+const users = require('./users');
+const rooms = require('./rooms');
+const reservations = require('./reservations');
 
-module.exports = [auth, createuser, users, finduser, deleteuser, alteruser];
+const root = (app, next) => {
+  const pkg = app.get('pkg');
+  app.get('/', (req, res) => res.json({ name: pkg.name, version: pkg.version }));
+  return next();
+};
+
+// eslint-disable-next-line consistent-return
+const register = (app, routes, cb) => {
+  if (!routes.length) {
+    return cb();
+  }
+
+  routes[0](app, (err) => {
+    if (err) {
+      return cb(err);
+    }
+
+    return register(app, routes.slice(1), cb);
+  });
+};
+
+module.exports = (app, next) => register(app, [
+  users,
+  rooms,
+  reservations,
+  root,
+], next);
