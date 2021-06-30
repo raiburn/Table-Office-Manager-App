@@ -6,4 +6,4 @@ const Crypt = async (password) => {
 }
 
 
-module.exports = {Crypt};
+module.exports = { Crypt };

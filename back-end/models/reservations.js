@@ -1,26 +1,36 @@
-const {Schema, SchemaType, model} = require('mongoose');
+const {Schema, model} = require('mongoose');
 
 const reservationSchema = new Schema({
-    Start:{
-        required:true,
-        type:Date,
-        trim:true
+    date: {
+      type: Date,
+      required: true
     },
-    Finish:{
-        required:true,
-        type:Date,
-        trim:true
+    scheduledTimeStart: {
+      type: String,
+      required: true
     },
+    scheduledTimeFinish: {
+      type: String,
+      required: true
+    },  
     users:{
-        required:true,
-        type: Schema.ObjectId,
-        ref:'Users'
+        //required:true,
+        // type: Schema.ObjectId,
+        // ref:'Users'
+        type: String,
     },
     seat:{
-        required:true,
-        type: Schema.ObjectId,
-        ref: 'Seats'
-    }
+        // //required:true,
+        // type: Schema.ObjectId,
+        // ref: 'Seats'
+        type: String,
+    },
+    room:{
+      //required:true,
+      // type: Schema.ObjectId,
+      // ref: 'Rooms'
+      type: String,
+  },
 });
 
 const Reservation = model('Reservation', reservationSchema);

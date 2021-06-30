@@ -31,12 +31,13 @@ const Login = async (req, res) => {
 };
 
 const CreateUser = async (req, res) => {
+    console.log(req.body.email);
+    const { email, password } = req.body;
     try{
-      const body = req.body;
-      const password =await bc.Crypt(req.body.password);
-      const users = await Users.create({ email: body.email, username: body.username, name: body.name, password: password, phonenumber: body.phonenumber});
+      const passwordCrypt =await bc.Crypt(password);
+      const users = await Users.create({ email: email, password: passwordCrypt });
       return res.status(200).json({users});
-    } catch(error){
+    } catch(error) {
         console.log(error);
     }
 }
@@ -71,6 +72,7 @@ const UsersAll = async (req, res) => {
 }
 
 const UserSearcher = async (req, res) => {
+    console.log('ok');
     try {
         const username = req.params.username;
         const users = await Users.find({'username':{$regex:'.*' + username + '.*' }});

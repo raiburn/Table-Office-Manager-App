@@ -1,18 +1,33 @@
-const auth = require('./Users/Auth');
-const createuser = require('./Users/CreateUser');
-const users = require('./Users/Users');
-const finduser = require('./Users/FindUser');
-const deleteuser = require('./Users/DeleteUser');
-const alteruser = require('./Users/AlterUser');
-const createseat = require('./Seats/CreateSeat');
-const alterseat = require('./Seats/AlterSeat');
-const deleteseat = require('./Seats/DeleteSeat');
-const findseat = require('./Seats/FindSeat');
-const seats = require('./Seats/Seats');
-const reservations = require('./Reservations/Reservations');
-const createreservations = require('./Reservations/CreateReservation');
-const deletereservations = require('./Reservations/DeleteReservations');
 
+const users = require('./users');
+const rooms = require('./rooms');
+const reservations = require('./reservations');
 
-module.exports = [auth, createuser, users, finduser, deleteuser, alteruser, createseat,
-     alterseat, deleteseat, findseat, seats, reservations, createreservations, deletereservations];
+const root = (app, next) => {
+  const pkg = app.get('pkg');
+  app.get('/', (req, res) => res.json({ name: pkg.name, version: pkg.version }));
+  return next();
+};
+
+// eslint-disable-next-line consistent-return
+const register = (app, routes, cb) => {
+  if (!routes.length) {
+    return cb();
+  }
+
+  routes[0](app, (err) => {
+    if (err) {
+      return cb(err);
+    }
+
+    return register(app, routes.slice(1), cb);
+  });
+};
+
+module.exports = (app, next) => register(app, [
+  users,
+  rooms,
+  reservations,
+  root,
+], next);
+

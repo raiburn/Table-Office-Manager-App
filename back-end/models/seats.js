@@ -1,4 +1,4 @@
-const {Schema, SchemaType, model} = require('mongoose');
+const {Schema, model} = require('mongoose');
 
 const seatSchema = new Schema({
     number:{

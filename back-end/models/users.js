@@ -6,17 +6,27 @@ const usuarioSchema = new Schema({
         unique: true,
         trim: true
     },
-    name:{
-        type: String,
-        unique: false,
-        trim: true
-    },
     password:{
         type: String,
         required: true,
         unique: false,
         trim: false
-    }
+    },
+    name: {
+        type: String,
+        unique: false,
+        trim: true,
+    },
+    password: {
+        type: String,
+        required: true,
+        unique: false,
+        trim: false
+    },
+    phonenumber: {
+        type: String,
+        unique: false,
+    },
 });
 
 const Users = model('Users', usuarioSchema);
