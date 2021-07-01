@@ -48,10 +48,6 @@ const Login = () => {
                 <div className="wrapper fadeInDown">
                     <div id="formContent">
 
-                        <div className="fadeIn first">
-                            
-                        </div>
-
                     
                         <form onSubmit={onSubmit}>
                             <input type="text" className="fadeIn second" id="username" placeholder="user"
