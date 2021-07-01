@@ -32,19 +32,20 @@ const Register = () =>{
         return (
             <div className="app">
                 <div className="wrapper fadeInDown">
+                <div className = "header2"><h4>Create a new account!</h4></div>
                     <div id="formContent">
                         <div className="fadeIn first">
                             <form onSubmit={onSubmit}>
-                                <label>email</label><br></br>
-                                <input type="text" id="email" onChange={onChange} value={data.email}></input><br></br>
-                                <label>Nombre de usuario</label><br></br>
-                                <input type="text" id="username" onChange={onChange} value={data.username}></input><br></br>
-                                <label>Nombre</label><br></br>
-                                <input type="text" id="name" onChange={onChange} value={data.name}></input><br></br>
-                                <label>contraseña</label><br></br>
-                                <input type="password" id="password" onChange={onChange} value={data.password}></input><br></br>
-                                <label>Número de telefono</label><br></br>
-                                <input type="text" id="cel" onChange={onChange} value={data.cel}></input><br></br>
+                                <label>Your e-mail</label><br></br>
+                                <input type="text" id="email" placeholder="E-mail" onChange={onChange} value={data.email}></input><br></br>
+                                <label>Create a new Username</label><br></br>
+                                <input type="text" id="username" placeholder="Username" onChange={onChange} value={data.username}></input><br></br>
+                                <label>Name</label><br></br>
+                                <input type="text" id="name" placeholder="Ej. John Doe" onChange={onChange} value={data.name}></input><br></br>
+                                <label>Insert your password</label><br></br>
+                                <input type="password" id="password" placeholder="**********" onChange={onChange} value={data.password}></input><br></br>
+                                <label>Cellphone number</label><br></br>
+                                <input type="text" id="cel" placeholder="1800-Table-Office" onChange={onChange} value={data.cel}></input><br></br>
                                 <input type="submit" className="fadeIn fourth" value="Registrar" />
                             </form>
                         </div>
