@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import Login from "./Components/Login/Login";
+import Home from "./Layouts/Home/Home"
 import Register from "./Components/Login/Register/Register";
 import Home from "./layouts/Home/Home";
 
@@ -28,4 +29,3 @@ function App() {
 }
 
 export default App;
-
