@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Login from "./Components/Login/Login";
 import Register from "./Components/Login/Register/Register";
+import AlterUser from "./Components/alteruser/alteruser";
 
 import {
   BrowserRouter as Router,
@@ -19,6 +20,10 @@ function App() {
         </Route>
         <Route exact path='/registrarse' component={Register}>
         </Route>
+        <Route exact path='/alteruser' component={AlterUser}>
+        </Route>
+
+
     </Switch>
   </Router>
         );
