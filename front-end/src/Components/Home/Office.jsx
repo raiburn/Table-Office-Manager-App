@@ -1,29 +1,20 @@
-import { useEffect, useState } from 'react';
 import './Office.css';
-
-const Office = ({occupiedSeat }) => {
-  const chairsByIndex = document.querySelectorAll('.OfficeChair') 
-  
-  const [chairList, setChairList] = useState([])
-  const [occupied, setOccupied] = useState([])
-
-  useEffect(() => {
-    setChairList(document.querySelectorAll('.OfficeChair'))
-  }, [])
-
-
-  const getChairIndex = () => {
-  }
-  getChairIndex()
+const Office = () => {
 
   return (
-    <div className="smallOffice">
-      <div className="OfficeChair" onClick={setOccupied} ></div>
-      <div className="OfficeTableSurface"></div>
-      <div className="OfficeChair"></div>
-      
+  <div className="smallOffice">
+    <div className="officeTable">
+      <div className="officeRow">
+        <div className="chair"></div>
+      </div>
+      <div className="officeRow">
+      <div className="tableSurface"></div>
+      </div>
+      <div className="officeRow">
+        <div className="chair"></div>
+      </div>
     </div>
-  )
-}
+</div>
+)}
 
 export default Office

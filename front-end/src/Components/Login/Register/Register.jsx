@@ -7,8 +7,10 @@ import SignIn from './SignIn';
 const Register = () => {
     const [data, setData] = useState({
         email:"",
+        username:"",
         name:"",
         password:"",
+        cel:""
     });
 
     const onChange = ({target}) =>{
