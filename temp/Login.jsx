@@ -4,8 +4,7 @@ import Auth from '../../services/Auth';
 import  { Redirect, useHistory}  from "react-router-dom";
 import isAuthenticated from "../../services/IsAuthenticated";
 import logo from "./logo.png"
-import fondo1 from "./fondo1.png"
-
+// import abel from "./abel.ttf"
 
 
 const Login = () => {
@@ -52,27 +51,26 @@ const Login = () => {
             
                 <div className="wrapper fadeInDown">
 
-                    <img src={fondo1} className="fondo" alt="User Icon" />
                     <div className = "header"><h3>Welcome to Table Office Manager</h3></div>
-                    <div className = "header3"><h3>Table Office Manager</h3></div>
-                    <div className = "header4"><h3>Join us!</h3></div>
                     <div id="formContent">
+
                         <div className="fadeIn first">
                             <img src={logo} className="w3-round" alt="User Icon" />
                         </div>
+
                     
                         <form onSubmit={onSubmit}>
-                            <input type="text" className="username" id="username" placeholder="User"
+                            <input type="text" className="fadeIn second" id="username" placeholder="User"
                              onChange={onChange} value={data.username}/>
-                            <input type="password" className="password" id="password" placeholder="Password"
+                            <input type="password" className="fadeIn third" id="password" placeholder="Password"
                              onChange={onChange} value={data.password}/>
-                            <input type="submit" className="log" value="Log In" />
+                            <input type="submit" className="fadeIn fourth" value="Log In" />
                         </form>
                         
                         <div id="formFooter">
-                            <a className="register" href="http://localhost:3000/registrarse">Registrarse</a>
+                            <a className="underlineHover" href="http://localhost:3000/registrarse">Registrarse</a>
                             <br></br>
-                            {/* <a className="forgpass" href="http://localhost:3000/alteruser">¿Olvidó la contraseña?</a> */}
+                            <a className="underlineHover" href="#">¿Olvidó la contraseña?</a>
                         </div>
 
                     </div>
