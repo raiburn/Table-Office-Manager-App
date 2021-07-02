@@ -17,19 +17,6 @@ const AlterUser = async(req, res) => {
     }
 }
 
-// const Login = async (req, res) => {
-//     try{
-
-//         const body = req.body;
-//         const users = await Users.findOne({'username':body.username}).lean();
-//         const data = await auth.Comparar(body.password, users.password);
-//         return {...users, data};
-
-//     } catch(error){
-//         console.log(error);
-//     }
-// };
-
 const Login = async(req, res) => {
     try {
         const body = req.body;
@@ -92,6 +79,10 @@ const UserSearcher = async(req, res) => {
     } catch (error) {
         console.log(error)
     }
+}
+
+const RecoverPass = async(req, res) => {
+
 }
 
 module.exports = { AlterUser, Login, CreateUser, DeleteUser, FindUser, UsersAll, UserSearcher }
