@@ -3,7 +3,6 @@ import "./App.css";
 import Login from "./Components/Login/Login";
 import Home from "./Layouts/Home/Home"
 import Register from "./Components/Login/Register/Register";
-import Home from "./layouts/Home/Home";
 
 import {
   BrowserRouter as Router,
