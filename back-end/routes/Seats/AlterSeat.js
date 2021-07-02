@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const alterSeat = Router();
-const alterSeatController = require('../../controllers/seats');
+const alterSeatController = require('../../controllers/Seats');
 
 alterSeat.put('/seats/:id', alterSeatController.AlterSeat);
 
